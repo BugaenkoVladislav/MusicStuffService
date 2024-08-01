@@ -14,7 +14,7 @@ service Music {
 }
 message Track{
   string nameOfTrack = 1;
-  string NameAlbum = 2;
+  int64 IdAlbum = 2;
   double duration = 3;
   string pathOfTrack = 4;
   repeated int64 coPublishers = 5;

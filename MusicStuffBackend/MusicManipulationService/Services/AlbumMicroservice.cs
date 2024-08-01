@@ -10,6 +10,7 @@ namespace MusicManipulationService.Services;
 
 public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow):Album.AlbumBase
 {
+    #region Converter
     private async Task<List<Track>> ConvertMusicListToTracks(List<Music> music)
     {
         var tracks = new List<Track>();
@@ -26,12 +27,44 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
                 Duration = i.Duration,
                 NameOfTrack = i.NameOfTrack,
                 PathOfTrack = i.PathOfTrack,
-                NameAlbum = i.Album.Name
+                IdAlbum = i.Album.IdAlbum
             };
             tracks.Add(actualTrack);
         }
         return tracks;
     }
+    private async Task<List<FullAlbumInfo>> ConvertAlbumsToFullAlbumsInfos(List<Domain.Domain.Entities.Album> albums)
+    {
+        var fullAlbumsInfos = new List<FullAlbumInfo>();
+        foreach (var i in albums)
+        {
+            var music = await uow.MusicRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
+            var tracks = await ConvertMusicListToTracks(music);
+            var albumCreators = await uow.AlbumCoPublisherRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
+            
+            fullAlbumsInfos.Add(new FullAlbumInfo()
+            {
+                Tracks =
+                {
+                    tracks
+                },
+                AlbumInfo = new AlbumMessage()
+                {
+                    Name = i.Name,
+                    PathPhoto = i.PathPhoto,
+                    CoPublishers =
+                    {
+                        albumCreators.Select(x=> x.IdCoPublisher)
+                    }
+                }
+            });
+        }
+        return fullAlbumsInfos;
+    }
+
+    #endregion
+    
+    
     
     public override async Task<FullAlbumInfo> GetAlbum(Id request, ServerCallContext context)
     {
@@ -97,10 +130,9 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
     public override async Task<Albums> FindAlbumsByName(String request, ServerCallContext context)
     {
         var albums = await uow.AlbumRepository.FindEntitiesByAsync(x => x.Name == request.Word);
-        var fullAlbumsInfos = await ConvertAlbumsToFullAlbumsInfos(albums);
         return await Task.FromResult(new Albums()
         {
-            Albums_ = { fullAlbumsInfos }
+            Albums_ = { await ConvertAlbumsToFullAlbumsInfos(albums) }
         });
     }
 
@@ -108,36 +140,9 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
     {
         var albumsCoPublishers = await uow.AlbumCoPublisherRepository.FindEntitiesByAsync(x => x.User.Name == request.Word);
         var albums = albumsCoPublishers.Select(x => x.Album).ToList();
-        var fullAlbumsInfos = await ConvertAlbumsToFullAlbumsInfos(albums);
-        return await base.FindAlbumsByAuthor(request, context);
-    }
-
-    private async Task<List<FullAlbumInfo>> ConvertAlbumsToFullAlbumsInfos(List<Domain.Domain.Entities.Album> albums)
-    {
-        var fullAlbumsInfos = new List<FullAlbumInfo>();
-        foreach (var i in albums)
+        return await Task.FromResult(new Albums()
         {
-            var music = await uow.MusicRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
-            var tracks = await ConvertMusicListToTracks(music);
-            var albumCreators = await uow.AlbumCoPublisherRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
-            
-            fullAlbumsInfos.Add(new FullAlbumInfo()
-            {
-                Tracks =
-                {
-                    tracks
-                },
-                AlbumInfo = new AlbumMessage()
-                {
-                    Name = i.Name,
-                    PathPhoto = i.PathPhoto,
-                    CoPublishers =
-                    {
-                        albumCreators.Select(x=> x.IdCoPublisher)
-                    }
-                }
-            });
-        }
-        return fullAlbumsInfos;
+            Albums_ = { await ConvertAlbumsToFullAlbumsInfos(albums) }
+        });
     }
 }

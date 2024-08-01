@@ -10,4 +10,9 @@ public class MusicRepository(MyDbContext db):BaseRepository<Music>(db)
     {
         return await db.Musics.Include(x=> x.Album).Where(filter).ToListAsync();
     }
+
+    public override async Task<Music> FindEntityByAsync(Expression<Func<Music, bool>> filter)
+    {
+        return await db.Musics.Include(x=> x.Album).FirstAsync(filter);
+    }
 }
