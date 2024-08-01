@@ -26,3 +26,4 @@ C:\Programming\MusicStuff\MusicStuffBackend\Infrastructure\bin\Debug\net8.0\Doma
 C:\Programming\MusicStuff\MusicStuffBackend\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
 C:\Programming\MusicStuff\MusicStuffBackend\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
 C:\Programming\MusicStuff\MusicStuffBackend\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Programming\MusicStuff\MusicStuffBackend\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

@@ -53,6 +53,10 @@ namespace MusicStuffBackend {
     static readonly grpc::Marshaller<global::MusicStuffBackend.AlbumMessage> __Marshaller_AlbumMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.AlbumMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::MusicStuffBackend.Result> __Marshaller_Result = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.Result.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::MusicStuffBackend.String> __Marshaller_String = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.String.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::MusicStuffBackend.Albums> __Marshaller_Albums = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.Albums.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullAlbumInfo> __Method_GetAlbum = new grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullAlbumInfo>(
@@ -77,6 +81,22 @@ namespace MusicStuffBackend {
         "RemoveAlbum",
         __Marshaller_Id,
         __Marshaller_Result);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums> __Method_FindAlbumsByName = new grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FindAlbumsByName",
+        __Marshaller_String,
+        __Marshaller_Albums);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums> __Method_FindAlbumsByAuthor = new grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FindAlbumsByAuthor",
+        __Marshaller_String,
+        __Marshaller_Albums);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -106,6 +126,18 @@ namespace MusicStuffBackend {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.Albums> FindAlbumsByName(global::MusicStuffBackend.String request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.Albums> FindAlbumsByAuthor(global::MusicStuffBackend.String request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -116,7 +148,9 @@ namespace MusicStuffBackend {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetAlbum, serviceImpl.GetAlbum)
           .AddMethod(__Method_AddNewAlbum, serviceImpl.AddNewAlbum)
-          .AddMethod(__Method_RemoveAlbum, serviceImpl.RemoveAlbum).Build();
+          .AddMethod(__Method_RemoveAlbum, serviceImpl.RemoveAlbum)
+          .AddMethod(__Method_FindAlbumsByName, serviceImpl.FindAlbumsByName)
+          .AddMethod(__Method_FindAlbumsByAuthor, serviceImpl.FindAlbumsByAuthor).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -129,6 +163,8 @@ namespace MusicStuffBackend {
       serviceBinder.AddMethod(__Method_GetAlbum, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullAlbumInfo>(serviceImpl.GetAlbum));
       serviceBinder.AddMethod(__Method_AddNewAlbum, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.AlbumMessage, global::MusicStuffBackend.Result>(serviceImpl.AddNewAlbum));
       serviceBinder.AddMethod(__Method_RemoveAlbum, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.Id, global::MusicStuffBackend.Result>(serviceImpl.RemoveAlbum));
+      serviceBinder.AddMethod(__Method_FindAlbumsByName, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums>(serviceImpl.FindAlbumsByName));
+      serviceBinder.AddMethod(__Method_FindAlbumsByAuthor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.String, global::MusicStuffBackend.Albums>(serviceImpl.FindAlbumsByAuthor));
     }
 
   }

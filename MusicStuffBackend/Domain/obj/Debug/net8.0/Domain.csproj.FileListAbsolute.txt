@@ -21,3 +21,4 @@ C:\Programming\MusicStuff\MusicStuffBackend\Domain\obj\Debug\net8.0\refint\Domai
 C:\Programming\MusicStuff\MusicStuffBackend\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Programming\MusicStuff\MusicStuffBackend\Domain\obj\Debug\net8.0\ref\Domain.dll
 C:\Programming\MusicStuff\MusicStuffBackend\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Programming\MusicStuff\MusicStuffBackend\Domain\obj\Debug\net8.0\Domain.sourcelink.json

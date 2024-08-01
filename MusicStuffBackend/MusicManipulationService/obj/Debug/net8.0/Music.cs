@@ -27,14 +27,18 @@ namespace MusicStuffBackend {
             "CgttdXNpYy5wcm90bxoVZ2VuZXJpY01lc3NhZ2VzLnByb3RvIn8KBVRyYWNr",
             "EhMKC25hbWVPZlRyYWNrGAEgASgJEhEKCWlkQ3JlYXRvchgCIAEoAxIRCglO",
             "YW1lQWxidW0YAyABKAkSEAoIZHVyYXRpb24YBCABKAESEwoLcGF0aE9mVHJh",
-            "Y2sYBSABKAkSFAoMY29QdWJsaXNoZXJzGAYgAygDMmEKBU11c2ljEh4KC0Fk",
-            "ZE5ld1RyYWNrEgYuVHJhY2saBy5SZXN1bHQSGwoLUmVtb3ZlVHJhY2sSAy5J",
-            "ZBoHLlJlc3VsdBIbCgxHZXRUcmFja0J5SWQSAy5JZBoGLlRyYWNrQhSqAhFN",
-            "dXNpY1N0dWZmQmFja2VuZGIGcHJvdG8z"));
+            "Y2sYBSABKAkSFAoMY29QdWJsaXNoZXJzGAYgAygDIh8KBlRyYWNrcxIVCgV0",
+            "cmFjaxgBIAMoCzIGLlRyYWNrMq8BCgVNdXNpYxIeCgtBZGROZXdUcmFjaxIG",
+            "LlRyYWNrGgcuUmVzdWx0EhsKC1JlbW92ZVRyYWNrEgMuSWQaBy5SZXN1bHQS",
+            "GwoMR2V0VHJhY2tCeUlkEgMuSWQaBi5UcmFjaxIkChBGaW5kVHJhY2tzQnlO",
+            "YW1lEgcuU3RyaW5nGgcuVHJhY2tzEiYKEkZpbmRUcmFja3NCeUF1dGhvchIH",
+            "LlN0cmluZxoHLlRyYWNrc0IUqgIRTXVzaWNTdHVmZkJhY2tlbmRiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::MusicStuffBackend.GenericMessagesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Track), global::MusicStuffBackend.Track.Parser, new[]{ "NameOfTrack", "IdCreator", "NameAlbum", "Duration", "PathOfTrack", "CoPublishers" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Track), global::MusicStuffBackend.Track.Parser, new[]{ "NameOfTrack", "IdCreator", "NameAlbum", "Duration", "PathOfTrack", "CoPublishers" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Tracks), global::MusicStuffBackend.Tracks.Parser, new[]{ "Track" }, null, null, null, null)
           }));
     }
     #endregion
@@ -397,6 +401,184 @@ namespace MusicStuffBackend {
           case 50:
           case 48: {
             coPublishers_.AddEntriesFrom(ref input, _repeated_coPublishers_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class Tracks : pb::IMessage<Tracks>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Tracks> _parser = new pb::MessageParser<Tracks>(() => new Tracks());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Tracks> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MusicStuffBackend.MusicReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Tracks() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Tracks(Tracks other) : this() {
+      track_ = other.track_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Tracks Clone() {
+      return new Tracks(this);
+    }
+
+    /// <summary>Field number for the "track" field.</summary>
+    public const int TrackFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MusicStuffBackend.Track> _repeated_track_codec
+        = pb::FieldCodec.ForMessage(10, global::MusicStuffBackend.Track.Parser);
+    private readonly pbc::RepeatedField<global::MusicStuffBackend.Track> track_ = new pbc::RepeatedField<global::MusicStuffBackend.Track>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::MusicStuffBackend.Track> Track {
+      get { return track_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Tracks);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Tracks other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!track_.Equals(other.track_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= track_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      track_.WriteTo(output, _repeated_track_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      track_.WriteTo(ref output, _repeated_track_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += track_.CalculateSize(_repeated_track_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Tracks other) {
+      if (other == null) {
+        return;
+      }
+      track_.Add(other.track_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            track_.AddEntriesFrom(input, _repeated_track_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            track_.AddEntriesFrom(ref input, _repeated_track_codec);
             break;
           }
         }

@@ -26,27 +26,31 @@ namespace MusicStuffBackend {
           string.Concat(
             "Cg5wbGF5bGlzdC5wcm90bxoLbXVzaWMucHJvdG8aFWdlbmVyaWNNZXNzYWdl",
             "cy5wcm90byJGCghQbGF5TGlzdBIUCgxwbGF5bGlzdE5hbWUYASABKAkSEQoJ",
-            "aWRDcmVhdG9yGAIgASgDEhEKCXBob3RvUGF0aBgDIAEoCSJLChFNdXNpY0Zy",
-            "b21QbGF5TGlzdBIfCgxwbGF5bGlzdEluZm8YASABKAsyCS5QbGF5TGlzdBIV",
-            "CgV0cmFjaxgCIAMoCzIGLlRyYWNrIjsKFFBsYXlMaXN0SWRBbmRUcmFja0lk",
-            "EhIKCnBsYXlsaXN0SWQYASABKAMSDwoHdHJhY2tJZBgCIAEoAyI2ChBJZFBs",
-            "YXlMaXN0SWRVc2VyEhIKCmlkUGxheWxpc3QYASABKAMSDgoGaWRVc2VyGAIg",
-            "ASgDMswCCghQbGF5bGlzdBImCgtHZXRQbGF5bGlzdBIDLklkGhIuTXVzaWNG",
-            "cm9tUGxheUxpc3QSJAoOQWRkTmV3UGxheWxpc3QSCS5QbGF5TGlzdBoHLlJl",
-            "c3VsdBIeCg5SZW1vdmVQbGF5bGlzdBIDLklkGgcuUmVzdWx0EjQKEkFkZFRy",
-            "YWNrVG9QbGF5bGlzdBIVLlBsYXlMaXN0SWRBbmRUcmFja0lkGgcuUmVzdWx0",
-            "EjkKF1JlbW92ZVRyYWNrRnJvbVBsYXlsaXN0EhUuUGxheUxpc3RJZEFuZFRy",
-            "YWNrSWQaBy5SZXN1bHQSLgoQQWRkT3RoZXJQbGF5bGlzdBIRLklkUGxheUxp",
-            "c3RJZFVzZXIaBy5SZXN1bHQSMQoTUmVtb3ZlT3RoZXJQbGF5bGlzdBIRLklk",
-            "UGxheUxpc3RJZFVzZXIaBy5SZXN1bHRCFKoCEU11c2ljU3R1ZmZCYWNrZW5k",
-            "YgZwcm90bzM="));
+            "aWRDcmVhdG9yGAIgASgDEhEKCXBob3RvUGF0aBgDIAEoCSJKChBGdWxsUGxh",
+            "eUxpc3RJbmZvEh8KDHBsYXlsaXN0SW5mbxgBIAEoCzIJLlBsYXlMaXN0EhUK",
+            "BXRyYWNrGAIgAygLMgYuVHJhY2siOwoUUGxheUxpc3RJZEFuZFRyYWNrSWQS",
+            "EgoKcGxheWxpc3RJZBgBIAEoAxIPCgd0cmFja0lkGAIgASgDIjYKEElkUGxh",
+            "eUxpc3RJZFVzZXISEgoKaWRQbGF5bGlzdBgBIAEoAxIOCgZpZFVzZXIYAiAB",
+            "KAMiMQoJUGxheWxpc3RzEiQKCXBsYXlsaXN0cxgBIAMoCzIRLkZ1bGxQbGF5",
+            "TGlzdEluZm8ypQMKCFBsYXlsaXN0EiUKC0dldFBsYXlsaXN0EgMuSWQaES5G",
+            "dWxsUGxheUxpc3RJbmZvEiQKDkFkZE5ld1BsYXlsaXN0EgkuUGxheUxpc3Qa",
+            "By5SZXN1bHQSHgoOUmVtb3ZlUGxheWxpc3QSAy5JZBoHLlJlc3VsdBI0ChJB",
+            "ZGRUcmFja1RvUGxheWxpc3QSFS5QbGF5TGlzdElkQW5kVHJhY2tJZBoHLlJl",
+            "c3VsdBI5ChdSZW1vdmVUcmFja0Zyb21QbGF5bGlzdBIVLlBsYXlMaXN0SWRB",
+            "bmRUcmFja0lkGgcuUmVzdWx0Ei4KEEFkZE90aGVyUGxheWxpc3QSES5JZFBs",
+            "YXlMaXN0SWRVc2VyGgcuUmVzdWx0EjEKE1JlbW92ZU90aGVyUGxheWxpc3QS",
+            "ES5JZFBsYXlMaXN0SWRVc2VyGgcuUmVzdWx0EioKE0ZpbmRQbGF5bGlzdHNC",
+            "eU5hbWUSBy5TdHJpbmcaCi5QbGF5bGlzdHMSLAoVRmluZFBsYXlsaXN0c0J5",
+            "QXV0aG9yEgcuU3RyaW5nGgouUGxheWxpc3RzQhSqAhFNdXNpY1N0dWZmQmFj",
+            "a2VuZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::MusicStuffBackend.MusicReflection.Descriptor, global::MusicStuffBackend.GenericMessagesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.PlayList), global::MusicStuffBackend.PlayList.Parser, new[]{ "PlaylistName", "IdCreator", "PhotoPath" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.MusicFromPlayList), global::MusicStuffBackend.MusicFromPlayList.Parser, new[]{ "PlaylistInfo", "Track" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.FullPlayListInfo), global::MusicStuffBackend.FullPlayListInfo.Parser, new[]{ "PlaylistInfo", "Track" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.PlayListIdAndTrackId), global::MusicStuffBackend.PlayListIdAndTrackId.Parser, new[]{ "PlaylistId", "TrackId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.IdPlayListIdUser), global::MusicStuffBackend.IdPlayListIdUser.Parser, new[]{ "IdPlaylist", "IdUser" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.IdPlayListIdUser), global::MusicStuffBackend.IdPlayListIdUser.Parser, new[]{ "IdPlaylist", "IdUser" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Playlists), global::MusicStuffBackend.Playlists.Parser, new[]{ "Playlists_" }, null, null, null, null)
           }));
     }
     #endregion
@@ -316,16 +320,16 @@ namespace MusicStuffBackend {
 
   }
 
-  public sealed partial class MusicFromPlayList : pb::IMessage<MusicFromPlayList>
+  public sealed partial class FullPlayListInfo : pb::IMessage<FullPlayListInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MusicFromPlayList> _parser = new pb::MessageParser<MusicFromPlayList>(() => new MusicFromPlayList());
+    private static readonly pb::MessageParser<FullPlayListInfo> _parser = new pb::MessageParser<FullPlayListInfo>(() => new FullPlayListInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MusicFromPlayList> Parser { get { return _parser; } }
+    public static pb::MessageParser<FullPlayListInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -341,7 +345,7 @@ namespace MusicStuffBackend {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MusicFromPlayList() {
+    public FullPlayListInfo() {
       OnConstruction();
     }
 
@@ -349,7 +353,7 @@ namespace MusicStuffBackend {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MusicFromPlayList(MusicFromPlayList other) : this() {
+    public FullPlayListInfo(FullPlayListInfo other) : this() {
       playlistInfo_ = other.playlistInfo_ != null ? other.playlistInfo_.Clone() : null;
       track_ = other.track_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -357,8 +361,8 @@ namespace MusicStuffBackend {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MusicFromPlayList Clone() {
-      return new MusicFromPlayList(this);
+    public FullPlayListInfo Clone() {
+      return new FullPlayListInfo(this);
     }
 
     /// <summary>Field number for the "playlistInfo" field.</summary>
@@ -387,12 +391,12 @@ namespace MusicStuffBackend {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MusicFromPlayList);
+      return Equals(other as FullPlayListInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MusicFromPlayList other) {
+    public bool Equals(FullPlayListInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -470,7 +474,7 @@ namespace MusicStuffBackend {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MusicFromPlayList other) {
+    public void MergeFrom(FullPlayListInfo other) {
       if (other == null) {
         return;
       }
@@ -983,6 +987,184 @@ namespace MusicStuffBackend {
           }
           case 16: {
             IdUser = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class Playlists : pb::IMessage<Playlists>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Playlists> _parser = new pb::MessageParser<Playlists>(() => new Playlists());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Playlists> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::MusicStuffBackend.PlaylistReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Playlists() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Playlists(Playlists other) : this() {
+      playlists_ = other.playlists_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Playlists Clone() {
+      return new Playlists(this);
+    }
+
+    /// <summary>Field number for the "playlists" field.</summary>
+    public const int Playlists_FieldNumber = 1;
+    private static readonly pb::FieldCodec<global::MusicStuffBackend.FullPlayListInfo> _repeated_playlists_codec
+        = pb::FieldCodec.ForMessage(10, global::MusicStuffBackend.FullPlayListInfo.Parser);
+    private readonly pbc::RepeatedField<global::MusicStuffBackend.FullPlayListInfo> playlists_ = new pbc::RepeatedField<global::MusicStuffBackend.FullPlayListInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::MusicStuffBackend.FullPlayListInfo> Playlists_ {
+      get { return playlists_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Playlists);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Playlists other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!playlists_.Equals(other.playlists_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= playlists_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      playlists_.WriteTo(output, _repeated_playlists_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      playlists_.WriteTo(ref output, _repeated_playlists_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += playlists_.CalculateSize(_repeated_playlists_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Playlists other) {
+      if (other == null) {
+        return;
+      }
+      playlists_.Add(other.playlists_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            playlists_.AddEntriesFrom(input, _repeated_playlists_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            playlists_.AddEntriesFrom(ref input, _repeated_playlists_codec);
             break;
           }
         }

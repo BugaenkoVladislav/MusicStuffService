@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Infrastructure.Repository;
 
-public class CoPublisherRepository(MyDbContext db):BaseRepository<TrackCoPublisher>(db)
+public class MusicCoPublisherRepository(MyDbContext db):BaseRepository<TrackCoPublisher>(db)
 {
     public override async Task<List<TrackCoPublisher>> FindEntitiesByAsync(Expression<Func<TrackCoPublisher, bool>> filter)
     {

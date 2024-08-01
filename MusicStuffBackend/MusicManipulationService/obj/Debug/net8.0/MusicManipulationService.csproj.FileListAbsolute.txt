@@ -109,3 +109,4 @@ C:\Programming\MusicStuff\MusicStuffBackend\MusicManipulationService\obj\Debug\n
 C:\Programming\MusicStuff\MusicStuffBackend\MusicManipulationService\obj\Debug\net8.0\MusicManipulationService.pdb
 C:\Programming\MusicStuff\MusicStuffBackend\MusicManipulationService\obj\Debug\net8.0\MusicManipulationService.genruntimeconfig.cache
 C:\Programming\MusicStuff\MusicStuffBackend\MusicManipulationService\obj\Debug\net8.0\ref\MusicManipulationService.dll
+C:\Programming\MusicStuff\MusicStuffBackend\MusicManipulationService\obj\Debug\net8.0\MusicManipulationService.sourcelink.json

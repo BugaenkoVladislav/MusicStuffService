@@ -13,6 +13,7 @@ public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(opti
     public DbSet<PlaylistUser> PlaylistUsers { get; set; }
     public DbSet<Role> Roles { get;set; }
     public DbSet<TrackCoPublisher> TrackCoPublishers { get; set; }
+    public DbSet<AlbumCoPublisher> AlbumCoPublishers { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         

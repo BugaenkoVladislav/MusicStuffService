@@ -10,6 +10,8 @@ service Album {
   rpc GetAlbum (Id) returns(FullAlbumInfo);
   rpc AddNewAlbum (AlbumMessage) returns (Result);
   rpc RemoveAlbum (Id) returns (Result);
+  rpc FindAlbumsByName(String)returns(Albums);
+  rpc FindAlbumsByAuthor(String)returns(Albums);
 }
 message AlbumMessage{
   string name =1;
@@ -20,4 +22,7 @@ message AlbumMessage{
 message FullAlbumInfo{
   AlbumMessage albumInfo = 1;
   repeated Track tracks = 2;
+}
+message Albums{
+  repeated FullAlbumInfo albums = 1;
 }

@@ -9,6 +9,8 @@ service Music {
   rpc AddNewTrack (Track) returns (Result);
   rpc RemoveTrack (Id) returns (Result);
   rpc GetTrackById (Id) returns (Track);
+  rpc FindTracksByName(String)returns(Tracks);
+  rpc FindTracksByAuthor(String)returns(Tracks);
 }
 message Track{
   string nameOfTrack = 1;
@@ -17,4 +19,7 @@ message Track{
   double duration = 4;
   string pathOfTrack = 5;
   repeated int64 coPublishers = 6;
+}
+message Tracks{
+  repeated Track track = 1;
 }

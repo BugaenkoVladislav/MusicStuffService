@@ -48,7 +48,7 @@ namespace MusicStuffBackend {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::MusicStuffBackend.Id> __Marshaller_Id = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.Id.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::MusicStuffBackend.MusicFromPlayList> __Marshaller_MusicFromPlayList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.MusicFromPlayList.Parser));
+    static readonly grpc::Marshaller<global::MusicStuffBackend.FullPlayListInfo> __Marshaller_FullPlayListInfo = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.FullPlayListInfo.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::MusicStuffBackend.PlayList> __Marshaller_PlayList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.PlayList.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -57,14 +57,18 @@ namespace MusicStuffBackend {
     static readonly grpc::Marshaller<global::MusicStuffBackend.PlayListIdAndTrackId> __Marshaller_PlayListIdAndTrackId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.PlayListIdAndTrackId.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::MusicStuffBackend.IdPlayListIdUser> __Marshaller_IdPlayListIdUser = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.IdPlayListIdUser.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::MusicStuffBackend.String> __Marshaller_String = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.String.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::MusicStuffBackend.Playlists> __Marshaller_Playlists = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MusicStuffBackend.Playlists.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.MusicFromPlayList> __Method_GetPlaylist = new grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.MusicFromPlayList>(
+    static readonly grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullPlayListInfo> __Method_GetPlaylist = new grpc::Method<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullPlayListInfo>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetPlaylist",
         __Marshaller_Id,
-        __Marshaller_MusicFromPlayList);
+        __Marshaller_FullPlayListInfo);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::MusicStuffBackend.PlayList, global::MusicStuffBackend.Result> __Method_AddNewPlaylist = new grpc::Method<global::MusicStuffBackend.PlayList, global::MusicStuffBackend.Result>(
@@ -114,6 +118,22 @@ namespace MusicStuffBackend {
         __Marshaller_IdPlayListIdUser,
         __Marshaller_Result);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists> __Method_FindPlaylistsByName = new grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FindPlaylistsByName",
+        __Marshaller_String,
+        __Marshaller_Playlists);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists> __Method_FindPlaylistsByAuthor = new grpc::Method<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FindPlaylistsByAuthor",
+        __Marshaller_String,
+        __Marshaller_Playlists);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -125,7 +145,7 @@ namespace MusicStuffBackend {
     public abstract partial class PlaylistBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.MusicFromPlayList> GetPlaylist(global::MusicStuffBackend.Id request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.FullPlayListInfo> GetPlaylist(global::MusicStuffBackend.Id request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -166,6 +186,18 @@ namespace MusicStuffBackend {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.Playlists> FindPlaylistsByName(global::MusicStuffBackend.String request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::MusicStuffBackend.Playlists> FindPlaylistsByAuthor(global::MusicStuffBackend.String request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -180,7 +212,9 @@ namespace MusicStuffBackend {
           .AddMethod(__Method_AddTrackToPlaylist, serviceImpl.AddTrackToPlaylist)
           .AddMethod(__Method_RemoveTrackFromPlaylist, serviceImpl.RemoveTrackFromPlaylist)
           .AddMethod(__Method_AddOtherPlaylist, serviceImpl.AddOtherPlaylist)
-          .AddMethod(__Method_RemoveOtherPlaylist, serviceImpl.RemoveOtherPlaylist).Build();
+          .AddMethod(__Method_RemoveOtherPlaylist, serviceImpl.RemoveOtherPlaylist)
+          .AddMethod(__Method_FindPlaylistsByName, serviceImpl.FindPlaylistsByName)
+          .AddMethod(__Method_FindPlaylistsByAuthor, serviceImpl.FindPlaylistsByAuthor).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -190,13 +224,15 @@ namespace MusicStuffBackend {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, PlaylistBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.Id, global::MusicStuffBackend.MusicFromPlayList>(serviceImpl.GetPlaylist));
+      serviceBinder.AddMethod(__Method_GetPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.Id, global::MusicStuffBackend.FullPlayListInfo>(serviceImpl.GetPlaylist));
       serviceBinder.AddMethod(__Method_AddNewPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.PlayList, global::MusicStuffBackend.Result>(serviceImpl.AddNewPlaylist));
       serviceBinder.AddMethod(__Method_RemovePlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.Id, global::MusicStuffBackend.Result>(serviceImpl.RemovePlaylist));
       serviceBinder.AddMethod(__Method_AddTrackToPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.PlayListIdAndTrackId, global::MusicStuffBackend.Result>(serviceImpl.AddTrackToPlaylist));
       serviceBinder.AddMethod(__Method_RemoveTrackFromPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.PlayListIdAndTrackId, global::MusicStuffBackend.Result>(serviceImpl.RemoveTrackFromPlaylist));
       serviceBinder.AddMethod(__Method_AddOtherPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.IdPlayListIdUser, global::MusicStuffBackend.Result>(serviceImpl.AddOtherPlaylist));
       serviceBinder.AddMethod(__Method_RemoveOtherPlaylist, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.IdPlayListIdUser, global::MusicStuffBackend.Result>(serviceImpl.RemoveOtherPlaylist));
+      serviceBinder.AddMethod(__Method_FindPlaylistsByName, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists>(serviceImpl.FindPlaylistsByName));
+      serviceBinder.AddMethod(__Method_FindPlaylistsByAuthor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MusicStuffBackend.String, global::MusicStuffBackend.Playlists>(serviceImpl.FindPlaylistsByAuthor));
     }
 
   }
