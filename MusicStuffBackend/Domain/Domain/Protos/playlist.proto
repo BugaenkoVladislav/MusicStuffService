@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MusicStuffBackend";
+
+import "music.proto";
+import "genericMessages.proto";
+
+service Playlist {
+  rpc GetPlaylist (Id) returns (MusicFromPlayList);
+  rpc AddNewPlaylist (PlayList) returns (Result);
+  rpc RemovePlaylist (Id) returns (Result);
+  rpc AddTrackToPlaylist (PlayListIdAndTrackId) returns (Result);
+  rpc RemoveTrackFromPlaylist (PlayListIdAndTrackId) returns (Result);
+  rpc AddOtherPlaylist(IdPlayListIdUser) returns (Result);
+  rpc RemoveOtherPlaylist(IdPlayListIdUser) returns (Result);
+}
+message PlayList{
+  string playlistName = 1;
+  int64 idCreator = 2;
+  string photoPath =3;
+}
+message MusicFromPlayList {
+  PlayList playlistInfo =1;
+  repeated Track track = 2;
+}
+message PlayListIdAndTrackId{
+  int64 playlistId = 1;
+  int64 trackId = 2;
+}
+message IdPlayListIdUser{
+  int64 idPlaylist = 1;
+  int64 idUser = 2;
+}

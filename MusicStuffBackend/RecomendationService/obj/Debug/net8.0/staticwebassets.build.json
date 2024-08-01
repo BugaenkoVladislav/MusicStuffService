@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4QMhKY87im6N5KZNqsH5+3c8y4cws0W9o97J/Drv+mQ=",
+  "Source": "RecomendationService",
+  "BasePath": "_content/RecomendationService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

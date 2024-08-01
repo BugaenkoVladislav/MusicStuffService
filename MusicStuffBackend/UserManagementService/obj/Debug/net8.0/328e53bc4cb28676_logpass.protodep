@@ -1,0 +1,3 @@
+obj\Debug\net8.0/Logpass.cs \
+obj\Debug\net8.0/LogpassGrpc.cs: ../Domain/Domain/Protos/genericMessages.proto\
+ ../Domain/Domain/Protos/logpass.proto

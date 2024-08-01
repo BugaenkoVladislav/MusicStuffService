@@ -1,0 +1,3 @@
+obj\Debug\net8.0/Music.cs \
+obj\Debug\net8.0/MusicGrpc.cs: ../Domain/Domain/Protos/genericMessages.proto\
+ ../Domain/Domain/Protos/music.proto

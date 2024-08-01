@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+
+option csharp_namespace = "MusicStuffBackend";
+
+import "genericMessages.proto";
+import "music.proto";
+
+service Album {
+  rpc GetAlbum (Id) returns(FullAlbumInfo);
+  rpc AddNewAlbum (AlbumMessage) returns (Result);
+  rpc RemoveAlbum (Id) returns (Result);
+}
+message AlbumMessage{
+  string name =1;
+  int64 idCreator = 2;
+  string pathPhoto=3;
+  repeated int64 coPublishers = 4;
+}
+message FullAlbumInfo{
+  AlbumMessage albumInfo = 1;
+  repeated Track tracks = 2;
+}

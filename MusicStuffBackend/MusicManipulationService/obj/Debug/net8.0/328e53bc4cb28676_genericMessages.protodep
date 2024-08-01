@@ -1,0 +1,1 @@
+obj\Debug\net8.0/GenericMessages.cs: ../Domain/Domain/Protos/genericMessages.proto

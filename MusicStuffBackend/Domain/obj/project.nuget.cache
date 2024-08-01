@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1UKyLSkrHDsaGXM4NaHvHS3CDMJW3sZW+NThgm+7eCsMRpeLl7AgHo0xJXqar1Dljw5KqWv2Hq5xFRfcS9bRGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Programming\\MusicStuff\\MusicStuffBackend\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CoffeeCup\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.7\\microsoft.entityframeworkcore.abstractions.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

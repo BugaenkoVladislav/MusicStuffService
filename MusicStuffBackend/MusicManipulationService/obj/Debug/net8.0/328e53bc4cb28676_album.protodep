@@ -1,0 +1,4 @@
+obj\Debug\net8.0/Album.cs \
+obj\Debug\net8.0/AlbumGrpc.cs: ../Domain/Domain/Protos/genericMessages.proto\
+ ../Domain/Domain/Protos/music.proto\
+ ../Domain/Domain/Protos/album.proto

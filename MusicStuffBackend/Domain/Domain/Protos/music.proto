@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+
+option csharp_namespace = "MusicStuffBackend";
+
+import "genericMessages.proto";
+
+service Music {
+  rpc AddNewTrack (Track) returns (Result);
+  rpc RemoveTrack (Id) returns (Result);
+  rpc GetTrackById (Id) returns (Track);
+}
+message Track{
+  string nameOfTrack = 1;
+  int64  idCreator = 2;
+  string NameAlbum = 3;
+  double duration = 4;
+  string pathOfTrack = 5;
+  repeated int64 coPublishers = 6;
+}

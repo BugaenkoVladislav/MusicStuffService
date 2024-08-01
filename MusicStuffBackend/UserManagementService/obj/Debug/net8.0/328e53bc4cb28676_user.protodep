@@ -1,0 +1,4 @@
+obj\Debug\net8.0/User.cs \
+obj\Debug\net8.0/UserGrpc.cs: ../Domain/Domain/Protos/genericMessages.proto\
+ ../Domain/Domain/Protos/logpass.proto\
+ ../Domain/Domain/Protos/user.proto

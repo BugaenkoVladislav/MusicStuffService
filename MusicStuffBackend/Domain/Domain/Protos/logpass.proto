@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MusicStuffBackend";
+
+import "genericMessages.proto";
+
+service LogPass{
+  rpc AddNewLogPass (LoginPassword) returns (Result);
+  rpc RemoveLogPass (Id) returns (Result);
+}
+message LoginPassword{
+  string login = 1;
+  string password =2;
+}
