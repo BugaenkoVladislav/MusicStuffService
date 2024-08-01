@@ -2,6 +2,7 @@
 using Infrastructure.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240801091251_1234")]
+    partial class _1234
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,6 +106,9 @@ namespace Infrastructure.Migrations
                     b.Property<long>("IdAlbum")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("IdCreator")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("NameOfTrack")
                         .IsRequired()
                         .HasColumnType("text");
@@ -114,6 +120,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("IdMusic");
 
                     b.HasIndex("IdAlbum");
+
+                    b.HasIndex("IdCreator");
 
                     b.ToTable("Music");
                 });
@@ -290,7 +298,15 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Domain.Entities.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("IdCreator")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Album");
+
+                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Domain.Domain.Entities.PlaylistMusic", b =>

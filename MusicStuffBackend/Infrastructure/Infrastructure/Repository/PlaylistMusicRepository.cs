@@ -12,7 +12,6 @@ public class PlaylistMusicRepository(MyDbContext db):BaseRepository<PlaylistMusi
             .Include(x => x.Music)
                 .ThenInclude(x=>x.Album)
             .Include(x=>x.Music)
-                .ThenInclude(x=>x.Creator)
             .Where(filter).ToListAsync();
     }
 }

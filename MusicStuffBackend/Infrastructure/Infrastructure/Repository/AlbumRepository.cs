@@ -6,5 +6,8 @@ namespace Infrastructure.Infrastructure.Repository;
 
 public class AlbumRepository(MyDbContext db) : BaseRepository<Album>(db)
 {
-    
+    public override async Task<Album> FindEntityByAsync(Expression<Func<Album, bool>> filter)
+    {
+        return await db.Albums.FirstAsync(filter);
+    }
 }

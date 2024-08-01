@@ -11,16 +11,12 @@ public class Music
     [Required]
     public string NameOfTrack { get; set; } 
     [Required]
-    public long IdCreator {get;set;}
-    [Required]
     public long IdAlbum {get;set;}
     [Required]
     public double Duration {get;set;}
     [Required]
     public string PathOfTrack {get;set;}
     
-    [ForeignKey("IdCreator")]
-    public User Creator { get; set; }
     [ForeignKey("IdAlbum")]
     public Album Album { get; set; }
     

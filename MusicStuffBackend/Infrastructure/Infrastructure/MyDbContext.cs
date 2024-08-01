@@ -1,10 +1,11 @@
 ﻿using Domain.Domain.Entities;
+using Infrastructure.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Infrastructure;
 
-public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(options)
-{
+public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(options){
+    public DbSet<Music> Musics { get; set; }
     public DbSet<Album> Albums { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<LoginPassword> LoginPasswords { get; set; }

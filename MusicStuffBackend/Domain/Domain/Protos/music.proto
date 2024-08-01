@@ -14,11 +14,10 @@ service Music {
 }
 message Track{
   string nameOfTrack = 1;
-  int64  idCreator = 2;
-  string NameAlbum = 3;
-  double duration = 4;
-  string pathOfTrack = 5;
-  repeated int64 coPublishers = 6;
+  string NameAlbum = 2;
+  double duration = 3;
+  string pathOfTrack = 4;
+  repeated int64 coPublishers = 5;
 }
 message Tracks{
   repeated Track track = 1;

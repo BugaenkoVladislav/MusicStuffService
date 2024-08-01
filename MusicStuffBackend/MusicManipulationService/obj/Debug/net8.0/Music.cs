@@ -24,20 +24,19 @@ namespace MusicStuffBackend {
     static MusicReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgttdXNpYy5wcm90bxoVZ2VuZXJpY01lc3NhZ2VzLnByb3RvIn8KBVRyYWNr",
-            "EhMKC25hbWVPZlRyYWNrGAEgASgJEhEKCWlkQ3JlYXRvchgCIAEoAxIRCglO",
-            "YW1lQWxidW0YAyABKAkSEAoIZHVyYXRpb24YBCABKAESEwoLcGF0aE9mVHJh",
-            "Y2sYBSABKAkSFAoMY29QdWJsaXNoZXJzGAYgAygDIh8KBlRyYWNrcxIVCgV0",
-            "cmFjaxgBIAMoCzIGLlRyYWNrMq8BCgVNdXNpYxIeCgtBZGROZXdUcmFjaxIG",
-            "LlRyYWNrGgcuUmVzdWx0EhsKC1JlbW92ZVRyYWNrEgMuSWQaBy5SZXN1bHQS",
-            "GwoMR2V0VHJhY2tCeUlkEgMuSWQaBi5UcmFjaxIkChBGaW5kVHJhY2tzQnlO",
-            "YW1lEgcuU3RyaW5nGgcuVHJhY2tzEiYKEkZpbmRUcmFja3NCeUF1dGhvchIH",
-            "LlN0cmluZxoHLlRyYWNrc0IUqgIRTXVzaWNTdHVmZkJhY2tlbmRiBnByb3Rv",
-            "Mw=="));
+            "CgttdXNpYy5wcm90bxoVZ2VuZXJpY01lc3NhZ2VzLnByb3RvImwKBVRyYWNr",
+            "EhMKC25hbWVPZlRyYWNrGAEgASgJEhEKCU5hbWVBbGJ1bRgCIAEoCRIQCghk",
+            "dXJhdGlvbhgDIAEoARITCgtwYXRoT2ZUcmFjaxgEIAEoCRIUCgxjb1B1Ymxp",
+            "c2hlcnMYBSADKAMiHwoGVHJhY2tzEhUKBXRyYWNrGAEgAygLMgYuVHJhY2sy",
+            "rwEKBU11c2ljEh4KC0FkZE5ld1RyYWNrEgYuVHJhY2saBy5SZXN1bHQSGwoL",
+            "UmVtb3ZlVHJhY2sSAy5JZBoHLlJlc3VsdBIbCgxHZXRUcmFja0J5SWQSAy5J",
+            "ZBoGLlRyYWNrEiQKEEZpbmRUcmFja3NCeU5hbWUSBy5TdHJpbmcaBy5UcmFj",
+            "a3MSJgoSRmluZFRyYWNrc0J5QXV0aG9yEgcuU3RyaW5nGgcuVHJhY2tzQhSq",
+            "AhFNdXNpY1N0dWZmQmFja2VuZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::MusicStuffBackend.GenericMessagesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Track), global::MusicStuffBackend.Track.Parser, new[]{ "NameOfTrack", "IdCreator", "NameAlbum", "Duration", "PathOfTrack", "CoPublishers" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Track), global::MusicStuffBackend.Track.Parser, new[]{ "NameOfTrack", "NameAlbum", "Duration", "PathOfTrack", "CoPublishers" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicStuffBackend.Tracks), global::MusicStuffBackend.Tracks.Parser, new[]{ "Track" }, null, null, null, null)
           }));
     }
@@ -80,7 +79,6 @@ namespace MusicStuffBackend {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Track(Track other) : this() {
       nameOfTrack_ = other.nameOfTrack_;
-      idCreator_ = other.idCreator_;
       nameAlbum_ = other.nameAlbum_;
       duration_ = other.duration_;
       pathOfTrack_ = other.pathOfTrack_;
@@ -106,20 +104,8 @@ namespace MusicStuffBackend {
       }
     }
 
-    /// <summary>Field number for the "idCreator" field.</summary>
-    public const int IdCreatorFieldNumber = 2;
-    private long idCreator_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long IdCreator {
-      get { return idCreator_; }
-      set {
-        idCreator_ = value;
-      }
-    }
-
     /// <summary>Field number for the "NameAlbum" field.</summary>
-    public const int NameAlbumFieldNumber = 3;
+    public const int NameAlbumFieldNumber = 2;
     private string nameAlbum_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,7 +117,7 @@ namespace MusicStuffBackend {
     }
 
     /// <summary>Field number for the "duration" field.</summary>
-    public const int DurationFieldNumber = 4;
+    public const int DurationFieldNumber = 3;
     private double duration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +129,7 @@ namespace MusicStuffBackend {
     }
 
     /// <summary>Field number for the "pathOfTrack" field.</summary>
-    public const int PathOfTrackFieldNumber = 5;
+    public const int PathOfTrackFieldNumber = 4;
     private string pathOfTrack_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,9 +141,9 @@ namespace MusicStuffBackend {
     }
 
     /// <summary>Field number for the "coPublishers" field.</summary>
-    public const int CoPublishersFieldNumber = 6;
+    public const int CoPublishersFieldNumber = 5;
     private static readonly pb::FieldCodec<long> _repeated_coPublishers_codec
-        = pb::FieldCodec.ForInt64(50);
+        = pb::FieldCodec.ForInt64(42);
     private readonly pbc::RepeatedField<long> coPublishers_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,7 +167,6 @@ namespace MusicStuffBackend {
         return true;
       }
       if (NameOfTrack != other.NameOfTrack) return false;
-      if (IdCreator != other.IdCreator) return false;
       if (NameAlbum != other.NameAlbum) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Duration, other.Duration)) return false;
       if (PathOfTrack != other.PathOfTrack) return false;
@@ -194,7 +179,6 @@ namespace MusicStuffBackend {
     public override int GetHashCode() {
       int hash = 1;
       if (NameOfTrack.Length != 0) hash ^= NameOfTrack.GetHashCode();
-      if (IdCreator != 0L) hash ^= IdCreator.GetHashCode();
       if (NameAlbum.Length != 0) hash ^= NameAlbum.GetHashCode();
       if (Duration != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Duration);
       if (PathOfTrack.Length != 0) hash ^= PathOfTrack.GetHashCode();
@@ -221,20 +205,16 @@ namespace MusicStuffBackend {
         output.WriteRawTag(10);
         output.WriteString(NameOfTrack);
       }
-      if (IdCreator != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(IdCreator);
-      }
       if (NameAlbum.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(NameAlbum);
       }
       if (Duration != 0D) {
-        output.WriteRawTag(33);
+        output.WriteRawTag(25);
         output.WriteDouble(Duration);
       }
       if (PathOfTrack.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(PathOfTrack);
       }
       coPublishers_.WriteTo(output, _repeated_coPublishers_codec);
@@ -252,20 +232,16 @@ namespace MusicStuffBackend {
         output.WriteRawTag(10);
         output.WriteString(NameOfTrack);
       }
-      if (IdCreator != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(IdCreator);
-      }
       if (NameAlbum.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(NameAlbum);
       }
       if (Duration != 0D) {
-        output.WriteRawTag(33);
+        output.WriteRawTag(25);
         output.WriteDouble(Duration);
       }
       if (PathOfTrack.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(PathOfTrack);
       }
       coPublishers_.WriteTo(ref output, _repeated_coPublishers_codec);
@@ -281,9 +257,6 @@ namespace MusicStuffBackend {
       int size = 0;
       if (NameOfTrack.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NameOfTrack);
-      }
-      if (IdCreator != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(IdCreator);
       }
       if (NameAlbum.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NameAlbum);
@@ -309,9 +282,6 @@ namespace MusicStuffBackend {
       }
       if (other.NameOfTrack.Length != 0) {
         NameOfTrack = other.NameOfTrack;
-      }
-      if (other.IdCreator != 0L) {
-        IdCreator = other.IdCreator;
       }
       if (other.NameAlbum.Length != 0) {
         NameAlbum = other.NameAlbum;
@@ -342,24 +312,20 @@ namespace MusicStuffBackend {
             NameOfTrack = input.ReadString();
             break;
           }
-          case 16: {
-            IdCreator = input.ReadInt64();
-            break;
-          }
-          case 26: {
+          case 18: {
             NameAlbum = input.ReadString();
             break;
           }
-          case 33: {
+          case 25: {
             Duration = input.ReadDouble();
             break;
           }
-          case 42: {
+          case 34: {
             PathOfTrack = input.ReadString();
             break;
           }
-          case 50:
-          case 48: {
+          case 42:
+          case 40: {
             coPublishers_.AddEntriesFrom(input, _repeated_coPublishers_codec);
             break;
           }
@@ -382,24 +348,20 @@ namespace MusicStuffBackend {
             NameOfTrack = input.ReadString();
             break;
           }
-          case 16: {
-            IdCreator = input.ReadInt64();
-            break;
-          }
-          case 26: {
+          case 18: {
             NameAlbum = input.ReadString();
             break;
           }
-          case 33: {
+          case 25: {
             Duration = input.ReadDouble();
             break;
           }
-          case 42: {
+          case 34: {
             PathOfTrack = input.ReadString();
             break;
           }
-          case 50:
-          case 48: {
+          case 42:
+          case 40: {
             coPublishers_.AddEntriesFrom(ref input, _repeated_coPublishers_codec);
             break;
           }

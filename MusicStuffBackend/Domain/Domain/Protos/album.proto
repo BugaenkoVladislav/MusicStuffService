@@ -15,9 +15,8 @@ service Album {
 }
 message AlbumMessage{
   string name =1;
-  int64 idCreator = 2;
-  string pathPhoto=3;
-  repeated int64 coPublishers = 4;
+  string pathPhoto=2;
+  repeated int64 coPublishers = 3;
 }
 message FullAlbumInfo{
   AlbumMessage albumInfo = 1;

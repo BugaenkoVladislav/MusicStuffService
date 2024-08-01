@@ -14,4 +14,11 @@ public class AlbumCoPublisherRepository(MyDbContext db):BaseRepository<AlbumCoPu
             .Where(filter).ToListAsync();
     }
 
+    public override async Task<AlbumCoPublisher> FindEntityByAsync(Expression<Func<AlbumCoPublisher, bool>> filter)
+    {
+        return await db.AlbumCoPublishers
+            .Include(x => x.Album)
+            .Include(x => x.User)
+            .FirstAsync(filter);
+    }
 }

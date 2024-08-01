@@ -2,6 +2,7 @@
 using Infrastructure.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240801080701_123")]
+    partial class _123
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,29 +43,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("IdAlbum");
 
                     b.ToTable("Albums");
-                });
-
-            modelBuilder.Entity("Domain.Domain.Entities.AlbumCoPublisher", b =>
-                {
-                    b.Property<long>("IdAlbumCoPublisher")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("IdAlbumCoPublisher"));
-
-                    b.Property<long>("IdAlbum")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("IdCoPublisher")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("IdAlbumCoPublisher");
-
-                    b.HasIndex("IdAlbum");
-
-                    b.HasIndex("IdCoPublisher");
-
-                    b.ToTable("AlbumCoPublishers");
                 });
 
             modelBuilder.Entity("Domain.Domain.Entities.LoginPassword", b =>
@@ -103,6 +83,9 @@ namespace Infrastructure.Migrations
                     b.Property<long>("IdAlbum")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("IdCreator")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("NameOfTrack")
                         .IsRequired()
                         .HasColumnType("text");
@@ -114,6 +97,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("IdMusic");
 
                     b.HasIndex("IdAlbum");
+
+                    b.HasIndex("IdCreator");
 
                     b.ToTable("Music");
                 });
@@ -263,25 +248,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Domain.Domain.Entities.AlbumCoPublisher", b =>
-                {
-                    b.HasOne("Domain.Domain.Entities.Album", "Album")
-                        .WithMany()
-                        .HasForeignKey("IdAlbum")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Domain.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("IdCoPublisher")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Album");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Domain.Domain.Entities.Music", b =>
                 {
                     b.HasOne("Domain.Domain.Entities.Album", "Album")
@@ -290,7 +256,15 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Domain.Entities.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("IdCreator")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Album");
+
+                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Domain.Domain.Entities.PlaylistMusic", b =>
