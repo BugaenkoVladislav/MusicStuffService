@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using System.Net.Mime;
+using Grpc.Core;
 using Infrastructure.Infrastructure;
 using MusicStuffBackend;
 using String = MusicStuffBackend.String;
@@ -7,28 +8,7 @@ namespace MusicManipulationService.Services;
 
 public class MusicMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow):Music.MusicBase
 {
-    #region Converter
-
-    private async Task<List<Track>> ConvertMusicsToTracks(List<Domain.Domain.Entities.Music> musics)
-    {
-        var tracks = new List<Track>();
-        foreach (var i in musics)
-        {
-            var trackCreators = await uow.TrackMusicCoPublisherRepository.FindEntitiesByAsync(x => x.IdTrack == i.IdMusic);
-            tracks.Add(new Track()
-            {
-                Duration = i.Duration,
-                NameOfTrack = i.NameOfTrack,
-                PathOfTrack = i.PathOfTrack,
-                CoPublishers = { trackCreators.Select(x=>x.IdCoPublisher) },
-                IdAlbum = i.IdAlbum
-            });
-        }
-        return tracks;
-    }
-
-    #endregion
-    
+    private Converter _converter = new Converter(uow);
     public override async Task<Result> RemoveTrack(Id request, ServerCallContext context)
     {
         var music = await uow.MusicRepository.FindEntityByAsync(x => x.IdMusic == request.MessageId);
@@ -81,7 +61,7 @@ public class MusicMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
         }
         return await Task.FromResult(new Tracks()
         {
-            Track = { await ConvertMusicsToTracks(musics) }
+            Track = { await _converter.ConvertMusicsToTracks(musics) }
         });
     }
 
@@ -90,7 +70,7 @@ public class MusicMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
         var musics = await uow.MusicRepository.FindEntitiesByAsync(x=>x.NameOfTrack == request.Word);
         return await Task.FromResult(new Tracks()
         {
-            Track = { await ConvertMusicsToTracks(musics) }
+            Track = { await _converter.ConvertMusicsToTracks(musics) }
         });
     }
 

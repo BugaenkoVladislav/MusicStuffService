@@ -1,4 +1,5 @@
-﻿using Domain.Domain.Entities;
+﻿using System.Net.Mime;
+using Domain.Domain.Entities;
 using Grpc.Core;
 using Infrastructure.Infrastructure;
 using MusicStuffBackend;
@@ -10,68 +11,14 @@ namespace MusicManipulationService.Services;
 
 public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow):Album.AlbumBase
 {
-    #region Converter
-    private async Task<List<Track>> ConvertMusicListToTracks(List<Music> music)
-    {
-        var tracks = new List<Track>();
-        foreach(var i in music)
-        {
-            var trackCreators =
-                await uow.TrackMusicCoPublisherRepository.FindEntitiesByAsync(x => x.IdTrack == i.IdMusic);
-            var actualTrack = new Track()
-            {
-                CoPublishers =
-                {
-                    trackCreators.Select(x=>x.IdCoPublisher)
-                },
-                Duration = i.Duration,
-                NameOfTrack = i.NameOfTrack,
-                PathOfTrack = i.PathOfTrack,
-                IdAlbum = i.Album.IdAlbum
-            };
-            tracks.Add(actualTrack);
-        }
-        return tracks;
-    }
-    private async Task<List<FullAlbumInfo>> ConvertAlbumsToFullAlbumsInfos(List<Domain.Domain.Entities.Album> albums)
-    {
-        var fullAlbumsInfos = new List<FullAlbumInfo>();
-        foreach (var i in albums)
-        {
-            var music = await uow.MusicRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
-            var tracks = await ConvertMusicListToTracks(music);
-            var albumCreators = await uow.AlbumCoPublisherRepository.FindEntitiesByAsync(x => x.IdAlbum == i.IdAlbum);
-            
-            fullAlbumsInfos.Add(new FullAlbumInfo()
-            {
-                Tracks =
-                {
-                    tracks
-                },
-                AlbumInfo = new AlbumMessage()
-                {
-                    Name = i.Name,
-                    PathPhoto = i.PathPhoto,
-                    CoPublishers =
-                    {
-                        albumCreators.Select(x=> x.IdCoPublisher)
-                    }
-                }
-            });
-        }
-        return fullAlbumsInfos;
-    }
-
-    #endregion
-    
-    
+    private Converter _converter = new Converter(uow);
     
     public override async Task<FullAlbumInfo> GetAlbum(Id request, ServerCallContext context)
     {
         var album = await uow.AlbumRepository.FindEntityByAsync(x => x.IdAlbum == request.MessageId);
         var albumCreators = await uow.AlbumCoPublisherRepository.FindEntitiesByAsync(x => x.IdAlbum == request.MessageId);
         var music = await uow.MusicRepository.FindEntitiesByAsync(x => x.IdAlbum == request.MessageId);
-        var tracks = await ConvertMusicListToTracks(music);
+        var tracks = await _converter.ConvertMusicListToTracks(music);
         
         return await Task.FromResult(new FullAlbumInfo()
         {
@@ -132,7 +79,7 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
         var albums = await uow.AlbumRepository.FindEntitiesByAsync(x => x.Name == request.Word);
         return await Task.FromResult(new Albums()
         {
-            Albums_ = { await ConvertAlbumsToFullAlbumsInfos(albums) }
+            Albums_ = { await _converter.ConvertAlbumsToFullAlbumsInfos(albums) }
         });
     }
 
@@ -142,7 +89,7 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
         var albums = albumsCoPublishers.Select(x => x.Album).ToList();
         return await Task.FromResult(new Albums()
         {
-            Albums_ = { await ConvertAlbumsToFullAlbumsInfos(albums) }
+            Albums_ = { await _converter.ConvertAlbumsToFullAlbumsInfos(albums) }
         });
     }
 }
