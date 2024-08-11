@@ -2,6 +2,7 @@
 using Infrastructure.Infrastructure;
 using MusicStuffBackend;
 using Music = Domain.Domain.Entities.Music;
+using Playlist = MusicStuffBackend.Playlist;
 
 namespace MusicManipulationService.Services;
 
@@ -86,4 +87,30 @@ public class Converter(UnitOfWork uow)
         var tracks = await ConvertMusicListToTracks(musics);
         return tracks;
     }
+
+    public async Task<List<FullPlayListInfo>> ConvertPlaylistMusicsToMusicList(List<Domain.Domain.Entities.Playlist> list)
+    {
+        var playlists = new List<FullPlayListInfo>();
+        foreach (var i in list)
+        {
+            var creator =
+                await uow.PlaylistUserRepository.FindEntityByAsync(x =>
+                    x.IsCreator == true && x.IdPlaylist == i.IdPlaylist);
+            var musics = await uow.PlaylistMusicRepository.FindEntitiesByAsync(x => x.IdPlaylist == i.IdPlaylist);
+            var tracks = await ConvertPlaylistMusicsToMusicList(musics);
+            playlists.Add(new FullPlayListInfo()
+            {
+                Track = { tracks },
+                PlaylistInfo = new PlayList()
+                {
+                    PlaylistName = i.PlaylistName,
+                    PhotoPath = i.PhotoPath,
+                    IdCreator = creator.IdUser
+                }
+            });
+        }
+        return playlists;
+
+    }
+    
 }
