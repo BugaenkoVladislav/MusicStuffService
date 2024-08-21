@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+
+service Translation{
+  rpc StreamMusic (MusicRequest) returns (stream AudioChunk);
+}
+message MusicRequest {
+  string song_path = 1;
+}
+
+message AudioChunk {
+  bytes data = 1;  // Данные аудио в формате байтов
+}
