@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicManipulationService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamingService", "StreamingService\StreamingService.csproj", "{E608EB03-AFA7-4E48-BD5D-3BED0EDFD723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayerService", "MusicPlayerService\MusicPlayerService.csproj", "{C78D8F8B-0397-4AA6-876B-8CAAC55DA414}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppStarter", "TestAppStarter\TestAppStarter.csproj", "{68C64B46-3C0A-4BF1-8444-55C22CE84245}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,10 +60,10 @@ Global
 		{E608EB03-AFA7-4E48-BD5D-3BED0EDFD723}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E608EB03-AFA7-4E48-BD5D-3BED0EDFD723}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E608EB03-AFA7-4E48-BD5D-3BED0EDFD723}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C78D8F8B-0397-4AA6-876B-8CAAC55DA414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C78D8F8B-0397-4AA6-876B-8CAAC55DA414}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C78D8F8B-0397-4AA6-876B-8CAAC55DA414}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C78D8F8B-0397-4AA6-876B-8CAAC55DA414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{984126A7-85B9-47D7-97E5-F736443F493A} = {C64F6433-789B-4EC9-B5E2-0CCC740B8605}

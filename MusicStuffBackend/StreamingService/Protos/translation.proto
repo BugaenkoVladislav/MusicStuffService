@@ -8,5 +8,5 @@ message MusicRequest {
 }
 
 message AudioChunk {
-  bytes data = 1;  // Данные аудио в формате байтов
+  string data = 1;  // Данные аудио в формате байтов
 }
