@@ -23,7 +23,7 @@ public static partial class TranslationReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChF0cmFuc2xhdGlvbi5wcm90byIhCgxNdXNpY1JlcXVlc3QSEQoJc29uZ19w",
-          "YXRoGAEgASgJIhoKCkF1ZGlvQ2h1bmsSDAoEZGF0YRgBIAEoCTI6CgtUcmFu",
+          "YXRoGAEgASgJIhoKCkF1ZGlvQ2h1bmsSDAoEZGF0YRgBIAEoDDI6CgtUcmFu",
           "c2xhdGlvbhIrCgtTdHJlYW1NdXNpYxINLk11c2ljUmVxdWVzdBoLLkF1ZGlv",
           "Q2h1bmswAWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -274,13 +274,13 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
 
   /// <summary>Field number for the "data" field.</summary>
   public const int DataFieldNumber = 1;
-  private string data_ = "";
+  private pb::ByteString data_ = pb::ByteString.Empty;
   /// <summary>
   /// Данные аудио в формате байтов
   /// </summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Data {
+  public pb::ByteString Data {
     get { return data_; }
     set {
       data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -331,7 +331,7 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
   #else
     if (Data.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(Data);
+      output.WriteBytes(Data);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -345,7 +345,7 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
     if (Data.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(Data);
+      output.WriteBytes(Data);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -358,7 +358,7 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
   public int CalculateSize() {
     int size = 0;
     if (Data.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Data);
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -391,7 +391,7 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          Data = input.ReadString();
+          Data = input.ReadBytes();
           break;
         }
       }
@@ -410,7 +410,7 @@ public sealed partial class AudioChunk : pb::IMessage<AudioChunk>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          Data = input.ReadString();
+          Data = input.ReadBytes();
           break;
         }
       }

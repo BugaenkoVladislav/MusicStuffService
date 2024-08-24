@@ -15,12 +15,28 @@ public class TranslationMicroservice(ILogger<TranslationMicroservice> logger):Tr
 
     public override async Task StreamMusic(MusicRequest request, IServerStreamWriter<AudioChunk> responseStream, ServerCallContext context)
     {
-        string[] messages = { "Привет", "Как дела?", "Че молчишь?", "Ты че, спишь?", "Ну пока" };
+        //create chunk 64 KByte
+        const int chunkSize = 64 * 1024;
+        //find object 
+        await using var fileStream = new FileStream(request.SongPath, FileMode.Open, FileAccess.Read, FileShare.Read, chunkSize, useAsync: true);
+        var buffer = new byte[chunkSize];
+        int bytesRead;
+        while ((bytesRead = await fileStream.ReadAsync(buffer)) > 0)
+        {
+            var chunk = new AudioChunk
+            {
+                Data = Google.Protobuf.ByteString.CopyFrom(buffer, 0, bytesRead)
+            };
+            // Отправьте часть клиенту
+            await responseStream.WriteAsync(chunk);
+        }
+        /*string[] messages = { "Привет", "Как дела?", "Че молчишь?", "Ты че, спишь?", "Ну пока" };
         foreach (var message in messages)
         {
+            var byteArray = 
             await responseStream.WriteAsync(new AudioChunk(){ Data = message});
             // для имитации работы делаем задержку в 1 секунду
             await Task.Delay(TimeSpan.FromSeconds(1));
-        }
+        }*/
     }
 }
