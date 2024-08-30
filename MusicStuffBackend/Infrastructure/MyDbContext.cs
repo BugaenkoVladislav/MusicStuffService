@@ -1,8 +1,7 @@
-﻿using Domain.Domain.Entities;
-using Infrastructure.Infrastructure.Repository;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Infrastructure;
+namespace Infrastructure;
 
 public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(options){
     public DbSet<Music> Musics { get; set; }

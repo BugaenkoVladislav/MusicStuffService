@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Domain.Entities;
+namespace Domain.Entities;
 
 public class Role
 {

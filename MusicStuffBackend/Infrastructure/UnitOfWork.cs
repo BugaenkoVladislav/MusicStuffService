@@ -1,8 +1,8 @@
-﻿using Domain.Domain.Entities;
-using Domain.Domain.Interfaces;
-using Infrastructure.Infrastructure.Repository;
+﻿using Domain.Entities;
+using Domain.Interfaces;
+using Infrastructure.Repository;
 
-namespace Infrastructure.Infrastructure;
+namespace Infrastructure;
 
 public class UnitOfWork(MyDbContext db,AlbumCoPublisherRepository albumCoPublisherRepository,MusicCoPublisherRepository trackMusicCoPublisherRepository,AlbumRepository albumRepository, PlaylistRepository playlistRepository, PlaylistMusicRepository playlistMusicRepository, UserRepository userRepository, MusicRepository musicRepository, LoginPasswordRepository loginPasswordRepository, RoleRepository roleRepository, PlaylistUserRepository playlistUserRepository)
 {

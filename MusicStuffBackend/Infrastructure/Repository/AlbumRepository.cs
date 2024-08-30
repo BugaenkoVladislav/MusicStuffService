@@ -1,13 +1,15 @@
 ﻿using System.Linq.Expressions;
-using Domain.Domain.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Infrastructure.Repository;
+namespace Infrastructure.Repository;
 
 public class AlbumRepository(MyDbContext db) : BaseRepository<Album>(db)
 {
+    private readonly MyDbContext _db = db;
+
     public override async Task<Album> FindEntityByAsync(Expression<Func<Album, bool>> filter)
     {
-        return await db.Albums.FirstAsync(filter);
+        return await _db.Albums.FirstAsync(filter);
     }
 }

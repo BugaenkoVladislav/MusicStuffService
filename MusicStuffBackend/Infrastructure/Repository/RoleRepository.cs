@@ -1,6 +1,6 @@
-﻿using Domain.Domain.Entities;
+﻿using Domain.Entities;
 
-namespace Infrastructure.Infrastructure.Repository;
+namespace Infrastructure.Repository;
 
 public class RoleRepository(MyDbContext db):BaseRepository<Role>(db)
 {

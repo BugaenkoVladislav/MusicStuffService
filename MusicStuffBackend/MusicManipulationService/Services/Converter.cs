@@ -1,14 +1,16 @@
-﻿using Domain.Domain.Entities;
-using Infrastructure.Infrastructure;
+﻿using Domain.Entities;
+using Infrastructure;
+using Infrastructure;
 using MusicStuffBackend;
-using Music = Domain.Domain.Entities.Music;
+using Album = Domain.Entities.Album;
+using Music = Domain.Entities.Music;
 using Playlist = MusicStuffBackend.Playlist;
 
 namespace MusicManipulationService.Services;
 
 public class Converter(UnitOfWork uow)
 {
-     public async Task<List<Track>> ConvertMusicsToTracks(List<Domain.Domain.Entities.Music> musics)
+     public async Task<List<Track>> ConvertMusicsToTracks(List<Music> musics)
     {
         var tracks = new List<Track>();
         foreach (var i in musics)
@@ -25,7 +27,7 @@ public class Converter(UnitOfWork uow)
         }
         return tracks;
     }
-    public async Task<List<Track>> ConvertMusicListToTracks(List<Domain.Domain.Entities.Music> music)
+    public async Task<List<Track>> ConvertMusicListToTracks(List<Music> music)
     {
         var tracks = new List<Track>();
         foreach(var i in music)
@@ -47,7 +49,7 @@ public class Converter(UnitOfWork uow)
         }
         return tracks;
     }
-    public async Task<List<FullAlbumInfo>> ConvertAlbumsToFullAlbumsInfos(List<Domain.Domain.Entities.Album> albums)
+    public async Task<List<FullAlbumInfo>> ConvertAlbumsToFullAlbumsInfos(List<Album> albums)
     {
         var fullAlbumsInfos = new List<FullAlbumInfo>();
         foreach (var i in albums)
@@ -88,7 +90,7 @@ public class Converter(UnitOfWork uow)
         return tracks;
     }
 
-    public async Task<List<FullPlayListInfo>> ConvertPlaylistMusicsToMusicList(List<Domain.Domain.Entities.Playlist> list)
+    public async Task<List<FullPlayListInfo>> ConvertPlaylistMusicsToMusicList(List<Domain.Entities.Playlist> list)
     {
         var playlists = new List<FullPlayListInfo>();
         foreach (var i in list)

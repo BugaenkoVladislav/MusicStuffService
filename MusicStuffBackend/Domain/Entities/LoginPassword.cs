@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Domain.Domain.Entities;
+namespace Domain.Entities;
 [Index(nameof(Login),IsUnique = true)]
 public class LoginPassword
 {

@@ -1,10 +1,11 @@
 ﻿using System.Net.Mime;
-using Domain.Domain.Entities;
+using Domain.Entities;
 using Grpc.Core;
-using Infrastructure.Infrastructure;
+using Infrastructure;
+using Infrastructure;
 using MusicStuffBackend;
 using Album = MusicStuffBackend.Album;
-using Music = Domain.Domain.Entities.Music;
+using Music = Domain.Entities.Music;
 using String = MusicStuffBackend.String;
 
 namespace MusicManipulationService.Services;
@@ -48,7 +49,7 @@ public class AlbumMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
 
     public override async Task<Result> AddNewAlbum(AlbumMessage request, ServerCallContext context)
     {
-        uow.AlbumRepository.AddEntity(new Domain.Domain.Entities.Album()
+        uow.AlbumRepository.AddEntity(new Domain.Entities.Album()
         {
             PathPhoto = request.PathPhoto,
             Name = request.Name,

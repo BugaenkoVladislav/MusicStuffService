@@ -1,8 +1,8 @@
-﻿using Domain.Domain.Entities;
-using Grpc.Core;
-using Infrastructure.Infrastructure;
+﻿using Grpc.Core;
+using Infrastructure;
+using Infrastructure;
 using MusicStuffBackend;
-using LoginPassword = Domain.Domain.Entities.LoginPassword;
+using LoginPassword = Domain.Entities.LoginPassword;
 using User = MusicStuffBackend.User;
 
 namespace UserManagmentService.Services;
@@ -50,7 +50,7 @@ public class UserManagementMicroservice(ILogger<UserManagementMicroservice> logg
         };
         _uow.LoginPasswordRepository.AddEntity(loginPassword);
         await _uow.SaveAllChanges();
-        _uow.UserRepository.AddEntity(new Domain.Domain.Entities.User()
+        _uow.UserRepository.AddEntity(new Domain.Entities.User()
         {
             Name = request.Name,
             Surname = request.Surname,

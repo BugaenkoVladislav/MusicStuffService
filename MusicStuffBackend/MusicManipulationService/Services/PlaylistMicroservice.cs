@@ -1,8 +1,9 @@
-﻿using Domain.Domain.Entities;
+﻿using Domain.Entities;
 using Grpc.Core;
-using Infrastructure.Infrastructure;
+using Infrastructure;
+using Infrastructure;
 using MusicStuffBackend;
-using Music = Domain.Domain.Entities.Music;
+using Music = Domain.Entities.Music;
 using Playlist = MusicStuffBackend.Playlist;
 using String = MusicStuffBackend.String;
 
@@ -42,7 +43,7 @@ public class PlaylistMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork 
 
     public override async Task<Result> AddNewPlaylist(PlayList request, ServerCallContext context)
     {
-        uow.PlaylistRepository.AddEntity(new Domain.Domain.Entities.Playlist()
+        uow.PlaylistRepository.AddEntity(new Domain.Entities.Playlist()
         {
             PlaylistName = request.PlaylistName,
             PhotoPath = request.PhotoPath

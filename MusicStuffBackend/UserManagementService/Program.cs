@@ -1,4 +1,5 @@
-using Infrastructure.Infrastructure;
+using Infrastructure;
+using Infrastructure;
 using UserManagmentService.Services;
 
 var builder = WebApplication.CreateBuilder(args);

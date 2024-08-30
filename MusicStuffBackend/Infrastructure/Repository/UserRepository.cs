@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using Domain.Domain.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Infrastructure.Repository;
+namespace Infrastructure.Repository;
 
 public class UserRepository(MyDbContext db) :BaseRepository<User>(db)
 {

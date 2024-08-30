@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using Domain.Domain.Interfaces;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Infrastructure.Repository;
+namespace Infrastructure.Repository;
 
 public class BaseRepository<TEntity>(MyDbContext db):IRepository<TEntity> where TEntity : class
 {

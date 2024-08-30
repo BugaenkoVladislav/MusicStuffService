@@ -1,6 +1,7 @@
 ﻿using System.Net.Mime;
 using Grpc.Core;
-using Infrastructure.Infrastructure;
+using Infrastructure;
+using Infrastructure;
 using MusicStuffBackend;
 using String = MusicStuffBackend.String;
 
@@ -20,7 +21,7 @@ public class MusicMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
     public override async Task<Result> AddNewTrack(Track request, ServerCallContext context)
     {
         var album = await uow.AlbumRepository.FindEntityByAsync(x => x.IdAlbum == request.IdAlbum);
-        uow.MusicRepository.AddEntity(new Domain.Domain.Entities.Music()
+        uow.MusicRepository.AddEntity(new Domain.Entities.Music()
         {
             Album = album,
             IdAlbum = request.IdAlbum,
@@ -53,7 +54,7 @@ public class MusicMicroservice(ILogger<AlbumMicroservice> logger, UnitOfWork uow
     public override async Task<Tracks> FindTracksByAuthor(String request, ServerCallContext context)
     {
         var musicsCoPublishers = await uow.TrackMusicCoPublisherRepository.FindEntitiesByAsync(x => x.User.Name == request.Word);
-        var musics = new List<Domain.Domain.Entities.Music>();
+        var musics = new List<Domain.Entities.Music>();
         foreach (var i in musicsCoPublishers)
         {
             var actualTrack = await uow.MusicRepository.FindEntityByAsync(x => x.IdMusic == i.IdTrack);

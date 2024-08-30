@@ -1,6 +1,6 @@
-﻿using Domain.Domain.Entities;
+﻿using Domain.Entities;
 
-namespace Infrastructure.Infrastructure.Repository;
+namespace Infrastructure.Repository;
 
 public class PlaylistRepository(MyDbContext db):BaseRepository<Playlist>(db)
 {
