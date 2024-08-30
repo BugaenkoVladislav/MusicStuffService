@@ -1,0 +1,4 @@
+obj\Debug\net8.0/Playlist.cs \
+obj\Debug\net8.0/PlaylistGrpc.cs: ../Domain/Protos/genericMessages.proto\
+ ../Domain/Protos/music.proto\
+ ../Domain/Protos/playlist.proto

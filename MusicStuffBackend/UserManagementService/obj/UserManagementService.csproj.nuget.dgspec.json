@@ -158,6 +158,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Programming\\MusicStuff\\MusicStuffBackend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Programming\\MusicStuff\\MusicStuffBackend\\Domain\\Domain.csproj"
+              },
               "C:\\Programming\\MusicStuff\\MusicStuffBackend\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "C:\\Programming\\MusicStuff\\MusicStuffBackend\\Infrastructure\\Infrastructure.csproj"
               }

@@ -1,0 +1,12 @@
+C:\Programming\MusicStuff\MusicStuffBackend\App\bin\Debug\net8.0\App.deps.json
+C:\Programming\MusicStuff\MusicStuffBackend\App\bin\Debug\net8.0\App.dll
+C:\Programming\MusicStuff\MusicStuffBackend\App\bin\Debug\net8.0\App.pdb
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.AssemblyInfoInputs.cache
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.AssemblyInfo.cs
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.csproj.CoreCompileInputs.cache
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.sourcelink.json
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.dll
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\refint\App.dll
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\App.pdb
+C:\Programming\MusicStuff\MusicStuffBackend\App\obj\Debug\net8.0\ref\App.dll

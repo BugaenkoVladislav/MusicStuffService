@@ -41,3 +41,4 @@ C:\Programming\MusicStuff\MusicStuffBackend\UserManagementService\obj\Debug\net8
 C:\Programming\MusicStuff\MusicStuffBackend\UserManagementService\obj\Debug\net8.0\UserManagementService.pdb
 C:\Programming\MusicStuff\MusicStuffBackend\UserManagementService\obj\Debug\net8.0\UserManagementService.genruntimeconfig.cache
 C:\Programming\MusicStuff\MusicStuffBackend\UserManagementService\obj\Debug\net8.0\ref\UserManagementService.dll
+C:\Programming\MusicStuff\MusicStuffBackend\UserManagementService\obj\Debug\net8.0\UserManagementService.sourcelink.json

@@ -1,12 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecomendationService", "RecomendationService\RecomendationService.csproj", "{951BA416-B6A1-45A6-8372-C668168826DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticsService", "AnalyticsService\AnalyticsService.csproj", "{2194E7C1-5824-4185-AA1A-B3A0F8BA8BAA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagementService", "UserManagementService\UserManagementService.csproj", "{86D80207-09DB-4121-8D82-8E59FDB2E169}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "PaymentService\PaymentService.csproj", "{23C1AE52-08E5-4B0B-82CB-CE224C60E987}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{984126A7-85B9-47D7-97E5-F736443F493A}"
 EndProject
@@ -20,7 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicManipulationService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamingService", "StreamingService\StreamingService.csproj", "{E608EB03-AFA7-4E48-BD5D-3BED0EDFD723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppStarter", "TestAppStarter\TestAppStarter.csproj", "{68C64B46-3C0A-4BF1-8444-55C22CE84245}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlayerService", "MusicPlayerService\MusicPlayerService.csproj", "{68C64B46-3C0A-4BF1-8444-55C22CE84245}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{041962B9-899E-4EB3-AC9D-C3EED83D9A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,22 +26,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{951BA416-B6A1-45A6-8372-C668168826DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{951BA416-B6A1-45A6-8372-C668168826DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{951BA416-B6A1-45A6-8372-C668168826DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{951BA416-B6A1-45A6-8372-C668168826DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2194E7C1-5824-4185-AA1A-B3A0F8BA8BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2194E7C1-5824-4185-AA1A-B3A0F8BA8BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2194E7C1-5824-4185-AA1A-B3A0F8BA8BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2194E7C1-5824-4185-AA1A-B3A0F8BA8BAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86D80207-09DB-4121-8D82-8E59FDB2E169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86D80207-09DB-4121-8D82-8E59FDB2E169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D80207-09DB-4121-8D82-8E59FDB2E169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D80207-09DB-4121-8D82-8E59FDB2E169}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23C1AE52-08E5-4B0B-82CB-CE224C60E987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23C1AE52-08E5-4B0B-82CB-CE224C60E987}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23C1AE52-08E5-4B0B-82CB-CE224C60E987}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23C1AE52-08E5-4B0B-82CB-CE224C60E987}.Release|Any CPU.Build.0 = Release|Any CPU
 		{984126A7-85B9-47D7-97E5-F736443F493A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{984126A7-85B9-47D7-97E5-F736443F493A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984126A7-85B9-47D7-97E5-F736443F493A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,9 +50,14 @@ Global
 		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68C64B46-3C0A-4BF1-8444-55C22CE84245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{984126A7-85B9-47D7-97E5-F736443F493A} = {C64F6433-789B-4EC9-B5E2-0CCC740B8605}
 		{8FC7B68A-759E-486A-A140-F61E6566D2E1} = {E91337F2-366B-4745-99BB-B8A3E4E01CE2}
+		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5} = {041962B9-899E-4EB3-AC9D-C3EED83D9A64}
 	EndGlobalSection
 EndGlobal

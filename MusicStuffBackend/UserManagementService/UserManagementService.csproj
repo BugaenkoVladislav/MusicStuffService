@@ -7,23 +7,20 @@
         <RootNamespace>UserManagmentService</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/genericMessages.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/genericMessages.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/user.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/user.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/logpass.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/logpass.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Protos\" />
-    </ItemGroup>
-
-    <ItemGroup>
+        <ProjectReference Include="..\Domain\Domain.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 

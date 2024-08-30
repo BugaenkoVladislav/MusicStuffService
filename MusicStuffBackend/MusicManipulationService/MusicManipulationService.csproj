@@ -6,16 +6,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/music.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/music.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/genericMessages.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/genericMessages.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/playlist.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/playlist.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../Domain/Domain/Protos/album.proto" GrpcServices="Server"/>
+        <Protobuf Include="../Domain/Protos/album.proto" GrpcServices="Server"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0"/>
