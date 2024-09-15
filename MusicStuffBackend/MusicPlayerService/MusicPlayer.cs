@@ -31,21 +31,29 @@ public static class MusicPlayer
     {
         try
         {
-            var trackStream = await GetFromCacheStream(songPath);
-            if (trackStream == null)
+            var call = await GetFromCacheStream(songPath);
+            if (call == null)
             {
-                throw new NullReferenceException("Error: Music stream is null or empty.");
+                Console.WriteLine("Ошибка: поток данных не доступен.");
+                return;
             }
-            var waveFormat = new WaveFormat(44100, 16, 2); // Убедитесь, что формат соответствует формату потока
+
             using var outputDevice = new WaveOutEvent();
-            await using var waveProvider = new StreamingWaveProvider(trackStream, waveFormat);
-            outputDevice.Init(waveProvider);
+            var waveFormat = new WaveFormat(44100, 16, 2); // Установите правильные параметры формата WAV
+            var bufferedWaveProvider = new BufferedWaveProvider(waveFormat);
+            outputDevice.Init(bufferedWaveProvider);
             outputDevice.Play();
 
-            Console.WriteLine("Playing audio... Press any key to exit.");
-            Console.ReadKey();
+            await foreach (var response in call.ReadAllAsync())
+            {
+                var data = response.Data.ToByteArray();
+                bufferedWaveProvider.AddSamples(data, 0, data.Length);
+                await Task.Delay(1000);
+                //воспроизводит частями но с буфером беда, либо перегружается либо ставишь делей и не слушабельно
+            }
 
-            outputDevice.Stop();
+            // Ожидание завершения воспроизведения
+            
         }
         catch (Exception ex)
         {
@@ -53,41 +61,5 @@ public static class MusicPlayer
         }
     }
 }
-public class StreamingWaveProvider(IAsyncStreamReader<AudioChunk> stream, WaveFormat waveFormat) : WaveStream
-{
-    public override WaveFormat WaveFormat => waveFormat;
-    public override int Read(byte[] buffer, int offset, int count)
-    {
-        return Task.Run(() => ReadAsync(buffer, offset, count, CancellationToken.None)).GetAwaiter().GetResult();
-    }
 
-    public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-    {
-        if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-        if (offset < 0 || count < 0) throw new ArgumentOutOfRangeException("Offset and count must be non-negative.");
-        if (offset + count > buffer.Length) throw new ArgumentException("Offset and count exceed buffer size.");
 
-        int totalBytesRead = 0;
-
-        await foreach (var chunk in stream.ReadAllAsync(cancellationToken))
-        {
-            var data = chunk.Data.ToByteArray();
-            int bytesToCopy = Math.Min(count - totalBytesRead, data.Length);
-
-            Array.Copy(data, 0, buffer, offset + totalBytesRead, bytesToCopy);
-            totalBytesRead += bytesToCopy;
-
-            if (totalBytesRead >= count)
-            {
-                break;
-            }
-        }
-        return totalBytesRead;
-    }
-    
-    //размер потока
-    public override long Length { get;} 
-
-    //Текущее положение в потоке.
-    public override long Position { get; set; }
-}

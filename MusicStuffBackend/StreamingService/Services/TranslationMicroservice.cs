@@ -12,7 +12,7 @@ public class TranslationMicroservice(ILogger<TranslationMicroservice> logger):Tr
 
     public override async Task StreamMusic(MusicRequest request, IServerStreamWriter<AudioChunk> responseStream, ServerCallContext context)
     {
-        const int chunkSize = 1024 * 16;
+        const int chunkSize = 1024 * 64;
         //find object 
         await using var fileStream = new FileStream(request.SongPath, FileMode.Open, FileAccess.Read, FileShare.Read, chunkSize, useAsync: true);
         var buffer = new byte[chunkSize];
