@@ -6,4 +6,3 @@ using TestAppStarter;
 
 await MusicPlayer.PlayMusic("C:\\Users\\CoffeeCup\\Music\\LinkinPark-Numb.wav");
 
-
