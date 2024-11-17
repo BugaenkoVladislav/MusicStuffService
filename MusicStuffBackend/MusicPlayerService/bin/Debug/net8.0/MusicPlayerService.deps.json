@@ -181,7 +181,10 @@
           "NAudio.WinMM": "2.2.1"
         },
         "runtime": {
-          "StreamingService.dll": {}
+          "StreamingService.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

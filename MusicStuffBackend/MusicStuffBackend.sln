@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{041962B9-899
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{7F143212-4AF5-4F25-9C9D-068811500096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B1BF9E8-6513-49FC-9426-BA040DE2FFE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F143212-4AF5-4F25-9C9D-068811500096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F143212-4AF5-4F25-9C9D-068811500096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F143212-4AF5-4F25-9C9D-068811500096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F143212-4AF5-4F25-9C9D-068811500096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{984126A7-85B9-47D7-97E5-F736443F493A} = {C64F6433-789B-4EC9-B5E2-0CCC740B8605}
