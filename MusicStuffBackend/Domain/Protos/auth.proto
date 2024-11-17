@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+import "logpass.proto";
+
+service Auth{
+  rpc GetToken(LoginPassword)returns (Token);
+}
+message Token{
+  string tokenId = 1;
+}

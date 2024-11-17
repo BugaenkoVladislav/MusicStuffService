@@ -561,7 +561,10 @@
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.7"
         },
         "runtime": {
-          "Domain.dll": {}
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

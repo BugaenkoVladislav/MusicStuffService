@@ -16,7 +16,7 @@
       </PackageReference>
     </ItemGroup>
     <ItemGroup>
-        <Protobuf Include="../StreamingService/Protos/translation.proto" GrpcServices="Client"/>
+        <Protobuf Include="../Domain/Protos/translation.proto" GrpcServices="Client"/>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\StreamingService\StreamingService.csproj" />
